@@ -1,10 +1,14 @@
 # Go GraphQL API Boilerplate
 
+[![Build Status](https://travis-ci.org/rakin92/go-gql-starter.svg?branch=master)](https://travis-ci.org/rakin92/go-gql-starter)
+[![Go Report Card](https://goreportcard.com/badge/github.com/rakin92/go-gql-starter)](https://goreportcard.com/report/github.com/rakin92/go-gql-starter)
+
 ## Stacks
 
 - Go : [GoLang](https://golang.org/)
 - GraphQL : [graphql-go](https://github.com/graph-gophers/graphql-go)
 - ORM : [gorm](https://github.com/jinzhu/gorm)
+- ENV : [viper](https://github.com/spf13/viper)
 
 ## Features
 
@@ -104,106 +108,7 @@ You need to set the Http request headers `Authorization`: `{JWT_token}`
 
 ## Usage
 
-### Sign Up
-
-```graphql
-mutation {
-  signUp(
-    email: "test@test.com"
-    password: "12345678"
-    firstName: "graphql"
-    lastName: "go"
-  ) {
-    ok
-    error
-    user {
-      id
-      email
-      firstName
-      lastName
-      bio
-      avatar
-      createdAt
-      updatedAt
-    }
-  }
-}
-```
-
-### Sign In
-
-```graphql
-mutation {
-  signIn(email: "test@test.com", password: "12345678") {
-    ok
-    error
-    token
-  }
-}
-```
-
-### Change a Password
-
-```graphql
-mutation {
-  changePassword(password: "87654321") {
-    ok
-    error
-    user {
-      id
-      email
-      firstName
-      lastName
-      bio
-      avatar
-      createdAt
-      updatedAt
-    }
-  }
-}
-```
-
-### Change a Profile
-
-```graphql
-mutation {
-  changeProfile(bio: "Go developer", avatar: "go-developer.png") {
-    ok
-    error
-    user {
-      id
-      email
-      firstName
-      lastName
-      bio
-      avatar
-      createdAt
-      updatedAt
-    }
-  }
-}
-```
-
-### Get my profile
-
-```graphql
-query {
-  getMyProfile {
-    ok
-    error
-    user {
-      id
-      email
-      firstName
-      lastName
-      bio
-      avatar
-      createdAt
-      updatedAt
-    }
-  }
-}
-```
+Checkout Wiki: [View Wiki](https://github.com/rakin92/go-gql-starter/wiki)
 
 ## Next to do
 
@@ -214,3 +119,5 @@ query {
 - [x] Change the profile
 - [x] Merging \*.graphql files to a schema with `packr`
 - [ ] Using Configuration file for DB & JWT secret_key
+- [ ] Using Auth0
+- [ ] Unautn query
