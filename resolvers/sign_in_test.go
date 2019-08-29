@@ -5,12 +5,10 @@ import (
 
 	"github.com/rakin92/go-gql-starter/db"
 	"github.com/rakin92/go-gql-starter/model"
-	"github.com/rakin92/go-gql-starter/utils"
 )
 
 func TestSignIn(t *testing.T) {
-	utils.ConfigureEnv()
-	db, err := db.ConnectDB()
+	db, err := db.GetMockDB()
 
 	defer db.DB.Close()
 
