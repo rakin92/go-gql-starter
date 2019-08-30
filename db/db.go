@@ -2,9 +2,9 @@ package db
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/jinzhu/gorm"
-	"github.com/rakin92/go-gql-starter/utils"
 	"github.com/spf13/viper"
 
 	// gorm postgres dialect
@@ -53,7 +53,7 @@ func GetMockDB() (*DB, error) {
 	mockDB, err := gorm.Open(mocket.DriverName, connectionString)
 
 	if err != nil {
-		utils.LogFatal(
+		log.Panic(
 			fmt.Sprintf("Error connecting to database: %v", err),
 			"db.init",
 		)
