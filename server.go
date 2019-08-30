@@ -9,6 +9,7 @@ import (
 
 	"github.com/rakin92/go-gql-starter/db"
 	"github.com/rakin92/go-gql-starter/handler"
+	"github.com/rakin92/go-gql-starter/migrations"
 	"github.com/rakin92/go-gql-starter/resolvers"
 	"github.com/rakin92/go-gql-starter/schema"
 	"github.com/rakin92/go-gql-starter/utils"
@@ -18,6 +19,8 @@ func main() {
 	utils.ConfigureEnv()
 
 	db, err := db.ConnectDB()
+	migrations.MigrateDB(db)
+
 	if err != nil {
 		panic(err)
 	}
