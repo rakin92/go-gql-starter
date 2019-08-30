@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/jinzhu/gorm"
+	"github.com/rakin92/go-gql-starter/utils"
 	"github.com/spf13/viper"
-	"gitlab.commonbond.co/springfield/patty/utils"
 
 	// gorm postgres dialect
 	_ "github.com/jinzhu/gorm/dialects/postgres"
