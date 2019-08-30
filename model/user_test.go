@@ -25,7 +25,7 @@ func TestComparePassword(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := user.ComparePassword(*&tt.args.password); got != tt.want {
+			if got := user.ComparePassword(tt.args.password); got != tt.want {
 				t.Errorf("ComparePassword() = %v, want %v", got, tt.want)
 			}
 		})
