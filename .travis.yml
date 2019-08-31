@@ -6,5 +6,10 @@ go:
 install:
   - go get -d -v
 
+cache:
+  directories:
+    - $HOME/.cache/go-build
+    - $HOME/gopath/pkg/mod
+
 script:
   - go test ./...
